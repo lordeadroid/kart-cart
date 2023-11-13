@@ -1,7 +1,8 @@
 import './App.css';
+import NavigationBar from './NavigationBar';
 
 const App = () => {
-  return <h1>Kart Cart</h1>;
+  return <NavigationBar />;
 };
 
 export default App;
