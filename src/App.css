@@ -12,7 +12,7 @@
 
 .search-bar {
   height: 40px;
-  width: 500px;
+  width: 700px;
   font-size: 20px;
   border-radius: 25px;
   padding: 10px;
@@ -21,12 +21,12 @@
 
 .account {
   font-size: 25px;
-  width: 125px;
+  width: 100px;
   text-align: center;
 }
 
 .cart {
   font-size: 25px;
-  width: 125px;
+  width: 100px;
   text-align: center;
 }
