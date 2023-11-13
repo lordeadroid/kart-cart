@@ -1,5 +1,32 @@
 .navigation-bar {
+  margin: 5px;
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logo {
   color: teal;
-  font-size: 1.5em;
+  font-size: 50px;
+}
+
+.search-bar {
+  height: 40px;
+  width: 500px;
+  font-size: 20px;
+  border-radius: 25px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.account {
+  font-size: 25px;
+  width: 125px;
+  text-align: center;
+}
+
+.cart {
+  font-size: 25px;
+  width: 125px;
+  text-align: center;
 }
