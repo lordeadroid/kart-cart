@@ -30,3 +30,33 @@
   width: 100px;
   text-align: center;
 }
+
+.images-section {
+  width: 1450px;
+  height: 350px;
+  margin: auto;
+  margin-top: 40px;
+  border: 1px solid black;
+}
+
+.categories {
+  display: flex;
+  justify-content: space-evenly;
+  width: 1500px;
+  margin: auto;
+  margin-top: 25px;
+}
+
+.category-component {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  text-align: center;
+}
+
+.image-container {
+  width: 75px;
+  height: 75px;
+  align-self: center;
+  border: 1px solid black;
+}

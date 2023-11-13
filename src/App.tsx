@@ -1,10 +1,14 @@
 import './App.css';
+import ImagesSection from './ImagesSection';
 import NavigationBar from './NavigationBar';
+import Categories from './category';
 
 const App = () => {
   return (
     <>
-      <NavigationBar />;
+      <NavigationBar />
+      <Categories />
+      <ImagesSection />
     </>
   );
 };
