@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Link, NavLink } from 'react-router-dom';
 
 type CategoryType = {
   category: string;
@@ -13,19 +13,34 @@ const Category = ({ category }: CategoryType): React.JSX.Element => {
   );
 };
 
+const MobilesPage = () => {
+  return <div>New Page</div>;
+};
+
 const Categories = () => {
   return (
-    <Router>
+    <BrowserRouter>
       <div className="categories">
-        <Link to="/mobiles">
+        <NavLink to="/mobiles">
           <Category category="Mobiles" />
+        </NavLink>
+        <Link to="Fashion">
+          <Category category="Fashion" />
         </Link>
-        <Category category="Fashion" />
-        <Category category="Travel" />
-        <Category category="Appliances" />
-        <Category category="Electronics" />
+        <Link to="Travel">
+          <Category category="Travel" />
+        </Link>
+        <Link to="Appliances">
+          <Category category="Appliances" />
+        </Link>
+        <Link to="Electronics">
+          <Category category="Electronics" />
+        </Link>
+        <Routes>
+          <Route path="/mobiles" element={<MobilesPage />} />
+        </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 };
 
