@@ -1,16 +1,8 @@
 import './App.css';
-import ImagesSection from './ImagesSection';
 import NavigationBar from './NavigationBar';
-import Categories from './category';
 
-const App = () => {
-  return (
-    <>
-      <NavigationBar />
-      <Categories />
-      <ImagesSection />
-    </>
-  );
+const App = (): React.JSX.Element => {
+  return <NavigationBar />;
 };
 
 export default App;
