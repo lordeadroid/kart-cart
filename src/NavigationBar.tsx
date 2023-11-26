@@ -1,38 +1,16 @@
-const LogoName = () => {
+import LeftTopBar from './LeftTopBar';
+import RightTopBar from './RightTopBar';
+
+const LogoName = (): React.JSX.Element => {
   return <h1 className="logo">Kart Cart</h1>;
 };
 
-const SearchBar = () => {
-  return (
-    <div>
-      <input type="search" name="searchbar" className="search-bar" />
-    </div>
-  );
-};
-
-const Account = () => {
-  return (
-    <div className="account">
-      <p>Account</p>
-    </div>
-  );
-};
-
-const Cart = () => {
-  return (
-    <div className="cart">
-      <p>Cart</p>
-    </div>
-  );
-};
-
-const NavigationBar = () => {
+const NavigationBar = (): React.JSX.Element => {
   return (
     <div className="navigation-bar">
+      <LeftTopBar />
       <LogoName />
-      <SearchBar />
-      <Account />
-      <Cart />
+      <RightTopBar />
     </div>
   );
 };
