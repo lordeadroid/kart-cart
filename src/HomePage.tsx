@@ -1,5 +1,5 @@
 const HomePage = (): React.JSX.Element => {
-  return <></>;
+  return <p>Home</p>
 };
 
 export default HomePage;

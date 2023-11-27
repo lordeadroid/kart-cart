@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom';
 import LeftTopBar from './LeftTopBar';
 import RightTopBar from './RightTopBar';
 
 const LogoName = (): React.JSX.Element => {
   return (
-    <div>
-      <h1 className="logo">Kart Cart</h1>
+    <div className='logo'>
+     <Link to='/'>Kart-Cart</Link>
     </div>
   );
 };
