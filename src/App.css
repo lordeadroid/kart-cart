@@ -9,3 +9,15 @@
   font-size: 4em;
   color: teal;
 }
+
+.left-top-bar {
+  font-size: 2em;
+  display: flex;
+  justify-content: space-around;
+}
+
+.right-top-bar {
+  font-size: 2em;
+  display: flex;
+  justify-content: space-around;
+}
