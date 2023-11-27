@@ -1,63 +1,11 @@
 .navigation-bar {
-  margin: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  display: grid;
+  grid-template-areas: 'leftbar logo rightbar';
+  grid-template-columns: 40% 20% 40%;
 }
 
 .logo {
+  grid-area: 'logo';
+  font-size: 4em;
   color: teal;
-  font-size: 50px;
-}
-
-.search-bar {
-  height: 40px;
-  width: 700px;
-  font-size: 20px;
-  border-radius: 25px;
-  padding: 10px;
-  border: 1px solid black;
-}
-
-.account {
-  font-size: 25px;
-  width: 100px;
-  text-align: center;
-}
-
-.cart {
-  font-size: 25px;
-  width: 100px;
-  text-align: center;
-}
-
-.images-section {
-  width: 1450px;
-  height: 350px;
-  margin: auto;
-  margin-top: 40px;
-  border: 1px solid black;
-}
-
-.categories {
-  display: flex;
-  justify-content: space-evenly;
-  width: 1500px;
-  margin: auto;
-  margin-top: 25px;
-}
-
-.category-component {
-  display: flex;
-  flex-direction: column;
-  width: 100px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.image-container {
-  width: 75px;
-  height: 75px;
-  align-self: center;
-  border: 1px solid black;
 }

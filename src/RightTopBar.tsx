@@ -1,5 +1,5 @@
 const RightTopBar = (): React.JSX.Element => {
-  return <></>;
+  return <div></div>;
 };
 
 export default RightTopBar;

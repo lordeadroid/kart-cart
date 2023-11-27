@@ -1,5 +1,5 @@
 const LeftTopBar = (): React.JSX.Element => {
-  return <></>;
+  return <div></div>;
 };
 
 export default LeftTopBar;
