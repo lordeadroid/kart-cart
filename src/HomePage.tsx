@@ -1,7 +1,5 @@
-import NavigationBar from './NavigationBar';
-
 const HomePage = (): React.JSX.Element => {
-  return <NavigationBar />;
+  return <></>;
 };
 
 export default HomePage;
