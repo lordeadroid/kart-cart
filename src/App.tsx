@@ -1,8 +1,11 @@
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
-import NavigationBar from './NavigationBar';
+import HomePage from './HomePage';
+
+const router = createBrowserRouter([{ path: '/', element: <HomePage /> }]);
 
 const App = (): React.JSX.Element => {
-  return <NavigationBar />;
+  return <RouterProvider router={router} />;
 };
 
 export default App;
