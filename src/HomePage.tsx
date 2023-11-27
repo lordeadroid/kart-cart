@@ -1,5 +1,7 @@
+import ImageGallery from './ImageGallery';
+
 const HomePage = (): React.JSX.Element => {
-  return <p>Home</p>
+  return <ImageGallery />;
 };
 
 export default HomePage;
