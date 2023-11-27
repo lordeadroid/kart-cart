@@ -8,16 +8,24 @@
   grid-area: 'logo';
   font-size: 4em;
   color: teal;
+  justify-self: center;
 }
 
 .left-top-bar {
   font-size: 2em;
   display: flex;
+  align-items: center;
   justify-content: space-around;
 }
 
 .right-top-bar {
   font-size: 2em;
   display: flex;
+  align-items: center;
   justify-content: space-around;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
 }

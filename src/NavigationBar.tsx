@@ -4,8 +4,10 @@ import RightTopBar from './RightTopBar';
 
 const LogoName = (): React.JSX.Element => {
   return (
-    <div className='logo'>
-     <Link to='/'>Kart-Cart</Link>
+    <div className="logo">
+      <Link className="link" to="/">
+        Kart-Cart
+      </Link>
     </div>
   );
 };
