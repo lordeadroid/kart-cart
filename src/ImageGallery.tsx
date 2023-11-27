@@ -12,7 +12,7 @@ const ImageGallery = (): React.JSX.Element => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setImageIndex(imageIndex === images.length - 1 ? 0 : imageIndex + 1);
-    }, 2000);
+    }, 2500);
 
     return () => {
       clearInterval(intervalId);
@@ -21,7 +21,7 @@ const ImageGallery = (): React.JSX.Element => {
 
   return (
     <div>
-      <img src={images[imageIndex]} alt="" />
+      <img src={images[imageIndex]} alt="Images of products" />
     </div>
   );
 };
