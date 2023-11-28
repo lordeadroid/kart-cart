@@ -8,7 +8,9 @@ type Props = {
   images: string[];
 };
 
-const ImageCard = (props: ImageCardProps): React.JSX.Element => {
+const ImageCard = (props: {image: string}): React.JSX.Element => {
+  console.log(props);
+
   return (
     <div>
       <p>{props.image}</p>
@@ -16,27 +18,35 @@ const ImageCard = (props: ImageCardProps): React.JSX.Element => {
   );
 };
 
-const TrendingProducts = (props: Props): React.JSX.Element => {
-  const imageCards: React.JSX.Element[] = props.images.map((image, index) => {
+const Products = (props: { data: Props }): React.JSX.Element => {
+  const imageCards: React.JSX.Element[] = props.data.images.map((image, index) => {
     return <ImageCard key={index} image={image} />;
   });
 
   return (
     <div className="trending">
-      <p>{props.category}</p>
+      <p>{props.data.category}</p>
       <div className="image-cards">{imageCards}</div>
     </div>
   );
 };
 
-const Products = (): React.JSX.Element => {
+const TrendingProducts = (): React.JSX.Element => {
+  const data: Props[] = [
+    { category: 'men', images: ['1', '2', '3', '4'] },
+    { category: 'women', images: ['5', '6', '7', '8'] },
+    { category: 'children', images: ['9', '10', '11', '12'] },
+  ];
+  console.log(data[0]);
+
   return (
     <>
-      <TrendingProducts category={'men'} images={['1', '2', '3']} />
-      <TrendingProducts category={'women'} images={['1']} />
-      <TrendingProducts category={'children'} images={['1']} />
+      <p className="trending-text">Trending</p>
+      <Products data={data[0]} />
+      <Products data={data[1]} />
+      <Products data={data[2]} />
     </>
   );
 };
 
-export default Products;
+export default TrendingProducts;
