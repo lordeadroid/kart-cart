@@ -8,7 +8,11 @@ type Props = {
   images: string[];
 };
 
-const ImageCard = (props: {image: string}): React.JSX.Element => {
+type ProductsProps = {
+  data: Props;
+};
+
+const ImageCard = (props: ImageCardProps): React.JSX.Element => {
   console.log(props);
 
   return (
@@ -18,10 +22,12 @@ const ImageCard = (props: {image: string}): React.JSX.Element => {
   );
 };
 
-const Products = (props: { data: Props }): React.JSX.Element => {
-  const imageCards: React.JSX.Element[] = props.data.images.map((image, index) => {
-    return <ImageCard key={index} image={image} />;
-  });
+const Products = (props: ProductsProps): React.JSX.Element => {
+  const imageCards: React.JSX.Element[] = props.data.images.map(
+    (image, index) => {
+      return <ImageCard key={index} image={image} />;
+    }
+  );
 
   return (
     <div className="trending">
