@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 type ImageCardProps = {
   key: number;
   image: string;
@@ -13,8 +15,6 @@ type ProductsProps = {
 };
 
 const ImageCard = (props: ImageCardProps): React.JSX.Element => {
-  console.log(props);
-
   return (
     <div>
       <p>{props.image}</p>
@@ -37,22 +37,30 @@ const Products = (props: ProductsProps): React.JSX.Element => {
   );
 };
 
-const TrendingProducts = (): React.JSX.Element => {
-  const data: Props[] = [
-    { category: 'men', images: ['1', '2', '3', '4'] },
-    { category: 'women', images: ['5', '6', '7', '8'] },
-    { category: 'children', images: ['9', '10', '11', '12'] },
-  ];
-  console.log(data[0]);
+const TrendingProducts = (): any => {
+  const [data, setData] = useState<null | Props[]>(null);
 
-  return (
-    <>
-      <p className="trending-text">Trending</p>
-      <Products data={data[0]} />
-      <Products data={data[1]} />
-      <Products data={data[2]} />
-    </>
-  );
+  useEffect(() => {
+    fetch('https://kart-cart-bff.onrender.com/trending')
+      .then((response) => response.json())
+      .then((data: Props[]): void => {
+        setData(data);
+      });
+  }, []);
+
+  const element =
+    data === null ? (
+      <></>
+    ) : (
+      <>
+        <p className="trending-text">Trending</p>
+        <Products data={data[0]} />
+        <Products data={data[1]} />
+        <Products data={data[2]} />
+      </>
+    );
+
+  return element;
 };
 
 export default TrendingProducts;
