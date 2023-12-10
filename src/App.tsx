@@ -2,6 +2,7 @@ import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
 import HomePage from './HomePage';
 import NavigationBar from './NavigationBar';
+import LoginPage from './LoginPage';
 
 const Layout = (): React.JSX.Element => {
   return (
@@ -22,8 +23,8 @@ const router = createBrowserRouter([
       { path: '/category/women', element: <p>Women</p> },
       { path: '/category/children', element: <p>Children</p> },
       { path: '/about', element: <p>About</p> },
-      { path: '/search', element: <p>Search</p> },
       { path: '/basket', element: <p>Basket</p> },
+      { path: '/login', element: <LoginPage /> },
     ],
   },
 ]);
