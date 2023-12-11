@@ -1,15 +1,18 @@
 import { useEffect, useState } from 'react';
 
 const ImageGallery = (): React.JSX.Element => {
-  const images = [
-    'https://images.pexels.com/photos/1549200/pexels-photo-1549200.jpeg?auto=compress&cs=tinysrgb&w=1600',
-    'https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1600',
-    'https://images.pexels.com/photos/837140/pexels-photo-837140.jpeg?auto=compress&cs=tinysrgb&w=1600',
-  ];
-
   const [imageIndex, setImageIndex] = useState(0);
+  const [images, setImages] = useState<string[]>([
+    'https://miro.medium.com/v2/resize:fit:640/format:webp/1*9EBHIOzhE1XfMYoKz1JcsQ.gif',
+  ]);
 
   useEffect(() => {
+    fetch('https://kart-cart-bff.onrender.com/homepagedata')
+      .then((response) => response.json())
+      .then((data: string[]): void => {
+        setImages(data);
+      });
+
     const intervalId = setInterval(() => {
       setImageIndex(imageIndex === images.length - 1 ? 0 : imageIndex + 1);
     }, 2500);
@@ -17,7 +20,7 @@ const ImageGallery = (): React.JSX.Element => {
     return () => {
       clearInterval(intervalId);
     };
-  });
+  }, []);
 
   return (
     <div>
