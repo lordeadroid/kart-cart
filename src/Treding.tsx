@@ -48,19 +48,21 @@ const TrendingProducts = (): any => {
       });
   }, []);
 
-  const element =
-    data === null ? (
-      <></>
-    ) : (
-      <>
-        <p className="trending-text">Trending</p>
-        <Products data={data[0]} />
-        <Products data={data[1]} />
-        <Products data={data[2]} />
-      </>
-    );
+  const products: React.JSX.Element[] | undefined = data?.map(
+    (element, index) => {
+      return <Products data={element} key={index} />;
+    }
+  );
 
-  return element;
+  const loading: React.JSX.Element = <p>Loading...</p>;
+  const trendingProducts: React.JSX.Element = (
+    <>
+      <p className="trending-text">Trending</p>
+      {products}
+    </>
+  );
+
+  return data === null ? loading : trendingProducts;
 };
 
 export default TrendingProducts;
