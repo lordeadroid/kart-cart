@@ -1,29 +1,38 @@
-export interface urlProps {
+interface urlProps {
   category: string;
 }
 
-export interface LoginDetails {
+interface LoginDetails {
   username: string;
   password: string;
 }
 
-export interface Cat {
+interface Cat {
   category: string;
 }
 
-export interface Category {
+interface Category {
   images: string[];
   name: string;
   mrp: number;
   price: number;
 }
 
-export interface CategoryData {
+interface CategoryData {
   productId: string;
   data: Category;
 }
 
-export interface ProductsProps {
+interface ProductsProps {
   category: String;
   images: string[];
 }
+
+export type {
+  urlProps,
+  LoginDetails,
+  Cat,
+  Category,
+  CategoryData,
+  ProductsProps,
+};
