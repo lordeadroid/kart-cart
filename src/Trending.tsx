@@ -1,49 +1,36 @@
 import { useEffect, useState } from 'react';
+import { ProductsProps } from './interfaces';
 
-type ImageCardProps = {
-  key: number;
-  image: string;
-};
-
-type Props = {
-  category: String;
-  images: string[];
-};
-
-type ProductsProps = {
-  data: Props;
-};
-
-const ImageCard = (props: ImageCardProps): React.JSX.Element => {
+const ImageCard = ({ image }: { image: string }): React.JSX.Element => {
   return (
     <div>
-      <p>{props.image}</p>
+      <p>{image}</p>
     </div>
   );
 };
 
-const Products = (props: ProductsProps): React.JSX.Element => {
-  const imageCards: React.JSX.Element[] = props.data.images.map(
-    (image, index) => {
+const Products = ({ data }: { data: ProductsProps }): React.JSX.Element => {
+  const imageCards: React.JSX.Element[] = data.images.map(
+    (image: string, index: number): React.JSX.Element => {
       return <ImageCard key={index} image={image} />;
     }
   );
 
   return (
     <div className="trending">
-      <p>{props.data.category}</p>
+      <p>{data.category}</p>
       <div className="image-cards">{imageCards}</div>
     </div>
   );
 };
 
-const TrendingProducts = (): any => {
-  const [data, setData] = useState<null | Props[]>(null);
+const TrendingProducts = (): React.JSX.Element => {
+  const [data, setData] = useState<null | ProductsProps[]>(null);
 
   useEffect(() => {
     fetch('https://kart-cart-bff.onrender.com/trending')
       .then((response) => response.json())
-      .then((data: Props[]): void => {
+      .then((data: ProductsProps[]): void => {
         setData(data);
       });
   }, []);
