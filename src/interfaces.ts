@@ -28,6 +28,10 @@ interface ProductsProps {
   images: string[];
 }
 
+interface FetchCategory {
+  [key: string]: Category;
+}
+
 export type {
   urlProps,
   LoginDetails,
@@ -35,4 +39,5 @@ export type {
   Category,
   CategoryData,
   ProductsProps,
+  FetchCategory,
 };

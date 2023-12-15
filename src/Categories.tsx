@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { URL } from './constants';
-import { Category, CategoryData} from './interfaces';
+import { Category, CategoryData, FetchCategory } from './interfaces';
 
 const Categories = ({ category }: { category: string }): React.JSX.Element => {
-  const [data, setData] = useState<{} | Category>({});
-  useEffect(() => {
-    const url = `${URL.category}/${category}`;
+  const url = `${URL.category}/${category}`;
+  const [data, setData] = useState<{} | FetchCategory>({});
 
+  useEffect(() => {
     fetch(url)
-      .then((res: Response): Promise<Category> => res.json())
-      .then((resData: Category): void => {
+      .then((res: Response): Promise<FetchCategory> => res.json())
+      .then((resData: FetchCategory): void => {
         setData(resData);
       });
   }, []);
 
   const Card = ({ data, productId }: CategoryData) => {
-    console.log(data.images[0]);
+    const [foreImage, backImage] = data.images;
     return (
       <>
-        <img src={data.images[0]} alt="" />
+        <img src={foreImage} alt="" />
         <p>{productId}</p>
       </>
     );
