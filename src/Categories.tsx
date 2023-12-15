@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { URL } from './constants';
+import { Cat } from './interfaces';
 
-interface Cat {
-  category: string;
-}
+
 
 const Categories = (props: Cat): React.JSX.Element => {
   const [data, setData] = useState([]);

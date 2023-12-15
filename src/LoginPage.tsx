@@ -1,14 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-
-interface LoginDetails {
-  username: string;
-  password: string;
-}
+import { LoginDetails } from './interfaces';
 
 const isUserVerified = (loginData: LoginDetails) => {
   const data: any = { rishabh: 'rawat' };
-
   return data[loginData.username] === loginData.password;
 };
 
