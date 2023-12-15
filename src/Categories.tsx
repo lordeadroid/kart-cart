@@ -1,26 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import { URL } from './constants';
-import { Cat } from './interfaces';
+import { Category, CategoryData} from './interfaces';
 
-
-
-const Categories = (props: Cat): React.JSX.Element => {
-  const [data, setData] = useState([]);
+const Categories = ({ category }: { category: string }): React.JSX.Element => {
+  const [data, setData] = useState<{} | Category>({});
   useEffect(() => {
-    fetch(`${URL.category}/men`)
-      .then((res) => res.json())
-      .then((resData) => {
+    const url = `${URL.category}/${category}`;
+
+    fetch(url)
+      .then((res: Response): Promise<Category> => res.json())
+      .then((resData: Category): void => {
         setData(resData);
       });
   }, []);
 
-  const Card = (props: any) => {
-    return <p>props</p>;
+  const Card = ({ data, productId }: CategoryData) => {
+    console.log(data.images[0]);
+    return (
+      <>
+        <img src={data.images[0]} alt="" />
+        <p>{productId}</p>
+      </>
+    );
   };
 
-  const page: React.JSX.Element[] = data.map((element, index) => {
-    return <Card key={index} data={element} />;
-  });
+  const page: React.JSX.Element[] = Object.entries(data).map(
+    ([productId, element]: [string, Category], index: number) => {
+      return <Card key={index} data={element} productId={productId} />;
+    }
+  );
 
   return <>{page}</>;
 };
