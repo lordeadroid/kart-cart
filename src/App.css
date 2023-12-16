@@ -76,3 +76,7 @@
 .mrp {
   text-decoration: line-through;
 }
+
+.image > img {
+  height: 400px;
+}
