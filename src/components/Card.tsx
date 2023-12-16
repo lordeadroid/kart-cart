@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { CategoryData } from '../utils/interfaces';
 
-const Card = ({ data, productId }: CategoryData) => {
+const Card = ({ data }: CategoryData) => {
   const [isHovered, setIsHovered] = useState(false);
   const [foreImage, backImage] = data.images;
+  const { mrp, price, name } = data;
+  const discount = `${Math.round(((price - mrp) * 100) / mrp)}% Off`;
 
-  const image: string = isHovered ? backImage : foreImage;
+  const image = isHovered ? backImage : foreImage;
 
   const handleHover = (): void => {
     setIsHovered(!isHovered);
@@ -18,12 +20,13 @@ const Card = ({ data, productId }: CategoryData) => {
         onMouseEnter={handleHover}
         onMouseLeave={handleHover}
       >
-        <img src={image} alt={data.name} />
+        <img src={image} alt={name} />
       </div>
-      <div className="name">{data.name}</div>
+      <div className="name">{name}</div>
       <div className="prices">
-        <div className="price">{data.price}</div>
-        <div className="mrp">{data.mrp}</div>
+        <div className="price">{price}</div>
+        <div className="mrp">{mrp}</div>
+        <div className="discount">{discount}</div>
       </div>
     </div>
   );

@@ -56,7 +56,7 @@
   font-size: 1.5em;
 }
 
-.cards {
+.cards-container {
   display: flex;
   gap: 10em;
 }
@@ -79,4 +79,12 @@
 
 .image > img {
   height: 400px;
+}
+
+.name {
+  font-weight: 900;
+}
+
+.discount {
+  color: gray;
 }

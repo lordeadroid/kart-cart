@@ -21,7 +21,7 @@ const Categories = ({ category }: { category: string }): React.JSX.Element => {
     }
   );
 
-  const cardsContainer = <div className="cards">{cards}</div>;
+  const cardsContainer = <div className="cards-container">{cards}</div>;
 
   return <>{cardsContainer}</>;
 };
