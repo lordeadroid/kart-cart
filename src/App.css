@@ -45,7 +45,6 @@
 }
 
 .footer {
-  border-top: 1px solid gray;
   padding: 1em 1em;
   display: flex;
   gap: 10em;
@@ -58,12 +57,14 @@
 
 .cards-container {
   display: flex;
-  gap: 10em;
+  flex-wrap: wrap;
+  gap: 20px 70px;
+  align-content: flex-start;
 }
 
 .card {
-  width: 15em;
-  height: 8em;
+  width: 300px;
+  height: 450px;
 }
 
 .prices {
@@ -87,4 +88,12 @@
 
 .discount {
   color: gray;
+}
+
+.sidebar {
+  width: 25%;
+}
+
+.category-page {
+  display: flex;
 }

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { URL } from '../utils/constants';
 import { FetchCategory } from '../utils/interfaces';
-import Card from '../components/Card';
+import { Card } from '../components/Card';
+import { Sidebar } from '../components/SideBar';
 
 const Categories = ({ category }: { category: string }): React.JSX.Element => {
   const url = `${URL.category}/${category}`;
@@ -23,7 +24,12 @@ const Categories = ({ category }: { category: string }): React.JSX.Element => {
 
   const cardsContainer = <div className="cards-container">{cards}</div>;
 
-  return <>{cardsContainer}</>;
+  return (
+    <div className='category-page'>
+      <Sidebar />
+      {cardsContainer}
+    </div>
+  );
 };
 
 export default Categories;

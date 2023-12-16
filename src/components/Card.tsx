@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { CategoryData } from '../utils/interfaces';
 
-const Card = ({ data }: CategoryData) => {
+export const Card = ({ data }: CategoryData) => {
   const [isHovered, setIsHovered] = useState(false);
   const [foreImage, backImage] = data.images;
   const { mrp, price, name } = data;
@@ -31,5 +31,3 @@ const Card = ({ data }: CategoryData) => {
     </div>
   );
 };
-
-export default Card;
