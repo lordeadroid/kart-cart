@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { LoginDetails } from './interfaces';
+import { LoginDetails } from '../utils/interfaces';
+import React from 'react';
 
 const isUserVerified = (loginData: LoginDetails) => {
   const data: any = { rishabh: 'rawat' };

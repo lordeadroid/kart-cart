@@ -1,6 +1,7 @@
-import Footer from './Footer';
-import ImageGallery from './ImageGallery';
-import TrendingProducts from './Trending';
+import Footer from '../layouts/Footer';
+import ImageGallery from '../components/ImageGallery';
+import TrendingProducts from '../components/Trending';
+import React from 'react';
 
 const HomePage = (): React.JSX.Element => {
   return (

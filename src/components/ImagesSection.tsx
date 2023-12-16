@@ -14,7 +14,7 @@ const ImagesSection = () => {
     };
   });
 
-  return <div className='images-section'>{images[imageIndex]}</div>;
+  return <div className="images-section">{images[imageIndex]}</div>;
 };
 
 export default ImagesSection;

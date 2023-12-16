@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import LeftTopBar from './LeftTopBar';
 import RightTopBar from './RightTopBar';
+import React from 'react';
 
 const LogoName = (): React.JSX.Element => {
   return (
