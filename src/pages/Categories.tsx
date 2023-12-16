@@ -15,13 +15,15 @@ const Categories = ({ category }: { category: string }): React.JSX.Element => {
       });
   }, []);
 
-  const page: React.JSX.Element[] = Object.entries(data).map(
+  const cards: React.JSX.Element[] = Object.entries(data).map(
     ([productId, element]) => {
       return <Card key={productId} data={element} productId={productId} />;
     }
   );
 
-  return <>{page}</>;
+  const cardsContainer = <div className="cards">{cards}</div>;
+
+  return <>{cardsContainer}</>;
 };
 
 export default Categories;

@@ -55,3 +55,24 @@
 .footer-item {
   font-size: 1.5em;
 }
+
+.cards {
+  display: flex;
+  gap: 10em;
+}
+
+.card {
+  width: 15em;
+  height: 8em;
+}
+
+.prices {
+  display: flex;
+  flex-direction: row;
+  margin-left: 2em;
+  gap: 2em;
+}
+
+.mrp {
+  text-decoration: line-through;
+}
