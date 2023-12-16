@@ -1,5 +1,4 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ImageGallery = (): React.JSX.Element => {
   const [imageIndex, setImageIndex] = useState(0);

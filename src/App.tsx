@@ -3,7 +3,7 @@ import './App.css';
 import HomePage from './pages/HomePage';
 import NavigationBar from './layouts/NavigationBar';
 import LoginPage from './pages/LoginPage';
-import Categories from './components/Categories';
+import Categories from './pages/Categories';
 
 const Layout = (): React.JSX.Element => {
   return (

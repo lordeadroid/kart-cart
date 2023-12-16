@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { URL } from '../utils/constants';
-import { Category, CategoryData, FetchCategory } from '../utils/interfaces';
+import { FetchCategory } from '../utils/interfaces';
+import Card from '../components/Card';
 
 const Categories = ({ category }: { category: string }): React.JSX.Element => {
   const url = `${URL.category}/${category}`;
@@ -14,19 +15,9 @@ const Categories = ({ category }: { category: string }): React.JSX.Element => {
       });
   }, []);
 
-  const Card = ({ data, productId }: CategoryData) => {
-    const [foreImage, backImage] = data.images;
-    return (
-      <>
-        <img src={foreImage} alt="" />
-        <p>{productId}</p>
-      </>
-    );
-  };
-
   const page: React.JSX.Element[] = Object.entries(data).map(
-    ([productId, element]: [string, Category], index: number) => {
-      return <Card key={index} data={element} productId={productId} />;
+    ([productId, element]) => {
+      return <Card key={productId} data={element} productId={productId} />;
     }
   );
 
