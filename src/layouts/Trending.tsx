@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ProductsProps } from './interfaces';
+import { ProductsProps } from '../utils/interfaces';
 
 const ImageCard = ({ image }: { image: string }): React.JSX.Element => {
   return (

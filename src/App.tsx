@@ -1,9 +1,9 @@
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
-import HomePage from './HomePage';
-import NavigationBar from './NavigationBar';
-import LoginPage from './LoginPage';
-import Categories from './Categories';
+import HomePage from './pages/HomePage';
+import NavigationBar from './layouts/NavigationBar';
+import LoginPage from './pages/LoginPage';
+import Categories from './components/Categories';
 
 const Layout = (): React.JSX.Element => {
   return (

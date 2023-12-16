@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { URL } from './constants';
-import { Category, CategoryData, FetchCategory } from './interfaces';
+import { URL } from '../utils/constants';
+import { Category, CategoryData, FetchCategory } from '../utils/interfaces';
 
 const Categories = ({ category }: { category: string }): React.JSX.Element => {
   const url = `${URL.category}/${category}`;
