@@ -11,6 +11,9 @@ const ImageGallery = (): React.JSX.Element => {
       .then((response) => response.json())
       .then((data: string[]): void => {
         setImages(data);
+      })
+      .catch((error) => {
+        console.error(error);
       });
 
     const intervalId = setInterval(() => {

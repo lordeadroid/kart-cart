@@ -33,6 +33,9 @@ const TrendingProducts = (): React.JSX.Element => {
       .then((response) => response.json())
       .then((data: ProductsProps[]): void => {
         setData(data);
+      })
+      .catch((error) => {
+        console.error(error);
       });
   }, []);
 

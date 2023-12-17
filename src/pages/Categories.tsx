@@ -13,6 +13,9 @@ const Categories = ({ category }: { category: string }): React.JSX.Element => {
       .then((res: Response): Promise<FetchCategory> => res.json())
       .then((resData: FetchCategory): void => {
         setData(resData);
+      })
+      .catch((error) => {
+        console.error(error);
       });
   }, []);
 
@@ -25,7 +28,7 @@ const Categories = ({ category }: { category: string }): React.JSX.Element => {
   const cardsContainer = <div className="cards-container">{cards}</div>;
 
   return (
-    <div className='category-page'>
+    <div className="category-page">
       <Sidebar />
       {cardsContainer}
     </div>
