@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const ImageGallery = (): React.JSX.Element => {
   const [imageIndex, setImageIndex] = useState<number>(0);
-  const [images, setImages] = useState<string[]>([
-    'https://miro.medium.com/v2/resize:fit:640/format:webp/1*9EBHIOzhE1XfMYoKz1JcsQ.gif',
-  ]);
+  const [images, setImages] = useState<string[]>([]);
 
   useEffect((): void => {
-    fetch('https://kart-cart-bff.onrender.com/homepagedata')
+    fetch("https://kart-cart-bff.onrender.com/homepagedata")
       .then((response) => response.json())
       .then((data: string[]): void => {
         setImages(data);
@@ -25,14 +23,11 @@ const ImageGallery = (): React.JSX.Element => {
   });
 
   return (
-    <div className="flex justify-between">
-      <div className="h-10 w-5 border-2"></div>
+    <div className="flex justify-center">
       <img
         src={images[imageIndex]}
-        alt="Images of products"
-        className="h-[900px]"
+        className="skeleton h-[900px] w-[1450px]"
       />
-      <div className="h-10 w-5 border-2"></div>
     </div>
   );
 };

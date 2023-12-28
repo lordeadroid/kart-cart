@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { CategoryData } from '../utils/interfaces';
+import { useState } from "react";
+import { CategoryData } from "../utils/interfaces";
 
 export const Card = ({ data }: CategoryData) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -20,7 +20,7 @@ export const Card = ({ data }: CategoryData) => {
         onMouseEnter={handleHover}
         onMouseLeave={handleHover}
       >
-        <img src={image} alt={name} />
+        <img src={image} alt={name} className="card-skeleton" />
       </div>
       <div className="name">{name}</div>
       <div className="prices">
