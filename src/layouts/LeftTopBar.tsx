@@ -15,8 +15,8 @@ const LeftTopBar = (): React.JSX.Element => {
         </Link>
       </div>
       <div className="category">
-        <Link className="link" to="/category/children">
-          Children
+        <Link className="link" to="/category/kids">
+          Kids
         </Link>
       </div>
     </div>
